@@ -35,15 +35,15 @@
   --font-xsmall: 1.4em;
 
   /* Spacings */
-  --spacing-128: 12.8;
-  --spacing-68: 6.8;
-  --spacing-36: 3.6;
-  --spacing-28: 2.8;
-  --spacing-24: 2.4;
-  --spacing-20: 2.0;
-  --spacing-16: 1.6;
-  --spacing-12: 1.2;
-  --spacing-8: 0.8;
+  --spacing-128: 12.8em;
+  --spacing-68: 6.8em;
+  --spacing-36: 3.6em;
+  --spacing-28: 2.8em;
+  --spacing-24: 2.4em;
+  --spacing-20: 2em;
+  --spacing-16: 1.6em;
+  --spacing-12: 1.2em;
+  --spacing-8: 0.8em;
 }
 
 *,
@@ -56,13 +56,12 @@
 
 html {
   font-family: var(--base-font);
-  font-size: 62.5%; /* Esto hace que los 16px pasen a ser 10px, como 1em = 16px, ahora cuando quiera escribir 10px, pongo 1em */
+  font-size: 62.5%;
   color: var(--dark-solid);
 }
 
 a {
   text-decoration: none;
-  font-size: 2em;
   font-family: inherit;
   color: inherit;
 }
@@ -81,7 +80,50 @@ p {
   font-size: 1.8em;
 }
 
+img {
+  width: 100%;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* HEADER */
+header {
+  background-color: var(--dark-bg-solid);
+  padding: var(--spacing-36);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__logo {
+  max-width: 300px;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-20);
+}
+
+.navbar__link {
+  font-size: var(--font-medium);
+  padding: var(--spacing-8) var(--spacing-16);
+/*   display: inline-block; */
+  transition: background .3s ease-in-out;
+}
+
+.navbar__link:hover {
+  background-color: var(--primary-900);
+}
+
+.with-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
 }
