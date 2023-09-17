@@ -32,17 +32,56 @@
   --font-large: 2.4em;
   --font-medium: 1.8em;
   --font-small: 1.6em;
-  --font-xsmall: 1.2em;
+  --font-xsmall: 1.4em;
 
   /* Spacings */
   --spacing-128: 12.8;
   --spacing-68: 6.8;
   --spacing-36: 3.6;
   --spacing-28: 2.8;
+  --spacing-24: 2.4;
+  --spacing-20: 2.0;
   --spacing-16: 1.6;
   --spacing-12: 1.2;
   --spacing-8: 0.8;
-
-
 }
 
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--base-font);
+  font-size: 62.5%; /* Esto hace que los 16px pasen a ser 10px, como 1em = 16px, ahora cuando quiera escribir 10px, pongo 1em */
+  color: var(--dark-solid);
+}
+
+a {
+  text-decoration: none;
+  font-size: 2em;
+  font-family: inherit;
+  color: inherit;
+}
+
+header,
+footer {
+  font-family: var(--alternative-font);
+  color: var(--light-font-solid);
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+p {
+  font-size: 1.8em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
