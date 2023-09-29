@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Funkoshop</title>
+  <link rel="stylesheet" href="../../css/index.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar container">
+      <picture class="navbar__logo">
+        <a href="./index.html">
+          <img src="./img/branding/logo_light_horizontal.svg" alt="">
+        </a>
+      </picture>
+      <ul class="navbar__menu">
+        <li class="navbar__item with-submenu">
+          <a href="./pages/shop/shop.html" class="navbar__link with-icon">SHOP<iconify-icon
+              icon="tabler:chevron-down"></iconify-icon></a>
+          <ul class="submenu">
+            <li class="submenu__item"><a href="" class="submenu__link">Funkos</a></li>
+            <li class="submenu__item"><a href="" class="submenu__link">Remeras</a></li>
+            <li class="submenu__item"><a href="" class="submenu__link">LLaveros</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item">
+          <a href="./pages/contact.html" class="navbar__link">CONTACTO</a>
+        </li>
+        <li class="navbar__item">
+          <a href="./pages/admin/login.html" class="navbar__link">LOGIN</a>
+        </li>
+        <li class="navbar__item">
+          <a href="./pages/cart.html" class="navbar__cart">
+            <img src="./img/icons/cart-icon.svg" alt="Ícono de carrito">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <aside>
+    <p>BUSCAR
+    <form action="" method="GET">
+      <label><input type="text"></label></p>
+      <label>
+        <p>ORDENAR POR</p><select name="select" id="ordenar">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </label>
+      <label>
+        <p>PRECIO</p>
+        <p>MIN<input type="text"> - MAX <input type="text"> </p>
+        <p>FILTRAR</p>
+        <label><input type="checkbox">Nuevos</label>
+        <label><input type="checkbox">OFERTAS</label>
+        <label><input type="checkbox">EDICION ESPECIAL</label>
+        <label><input type="checkbox">FAVORITOS</label>
+
+
+      </label>
+
+    </form>
+
+  </aside>
+
+  <main class="main-container">
+    <section class="collection container">
+
+
+  </main>
+  <footer class="footer">
+    <nav class="navbar container">
+      <ul class="navbar__item">
+        <li class="navbar__item">
+          <a class="navbar__link href=" ./pages/shop/shop.html">SHOP</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link href=" ./pages/register.html">REGISTRARSE</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link href=" ./pages/admin/login.html">LOGIN</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link href=" ./pages/admin/contact.html">CONTACTO</a>
+        </li>
+      </ul>
+      <picture>
+        <img src="img/branding/isotype.svg" alt="Isotipo">
+      </picture>
+    </nav>
+    <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+  </footer class="footer__copy">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>
