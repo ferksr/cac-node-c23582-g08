@@ -17,6 +17,8 @@
   --dark-500: rgba(31,31,31,0.5);
   --dark-300: rgba(31,31,31,0.3);
 
+  --dark: rgb(0, 0, 0);
+
   --dark-bg-solid: #30343F;
   --light-bg-solid: #fafaff;
   --light-font-solid: #fff;
@@ -44,6 +46,7 @@
   --spacing-16: 1.6em;
   --spacing-12: 1.2em;
   --spacing-8: 0.8em;
+  --spacing-4: 0.4em;
 }
 
 *,
@@ -77,7 +80,7 @@ ul, ol {
 }
 
 p {
-  font-size: 1.8em;
+  font-size: 1.8em;   
 }
 
 img {
@@ -208,6 +211,36 @@ header {
 .hero__link:hover {
   background-color: var(--primary-900);
   color: var(--light-font-solid);
+}
+
+/*FILTER*/
+
+.filter__text {
+  font-family: var(--alternative-font);
+  font-size: var(--font-medium);
+  color: var(--dark); 
+  font-weight: bold;
+  padding: var(--spacing-4) var(--spacing-4);
+}
+
+.input__text{
+  width: 200px;
+  height: 30px;
+}
+
+.select__text{
+  width: 200px;
+  height: 30px;
+}
+
+.input__number{
+  width: 50px;
+  height: 20px;
+}
+
+.checkbox__text{
+  font-size: var(--font-xsmall);
+
 }
 
 /* COLLECTIONS */
