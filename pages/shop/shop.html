@@ -14,12 +14,12 @@
     <nav class="navbar container">
       <picture class="navbar__logo">
         <a href="./index.html">
-          <img src="./img/branding/logo_light_horizontal.svg" alt="">
+          <img src="../../img/branding/logo_light_horizontal.svg" alt="">
         </a>
       </picture>
       <ul class="navbar__menu">
         <li class="navbar__item with-submenu">
-          <a href="./pages/shop/shop.html" class="navbar__link with-icon">SHOP<iconify-icon
+          <a href="../../pages/shop/shop.html" class="navbar__link with-icon">SHOP<iconify-icon
               icon="tabler:chevron-down"></iconify-icon></a>
           <ul class="submenu">
             <li class="submenu__item"><a href="" class="submenu__link">Funkos</a></li>
@@ -28,25 +28,26 @@
           </ul>
         </li>
         <li class="navbar__item">
-          <a href="./pages/contact.html" class="navbar__link">CONTACTO</a>
+          <a href="../../pages/contact.html" class="navbar__link">CONTACTO</a>
         </li>
         <li class="navbar__item">
-          <a href="./pages/admin/login.html" class="navbar__link">LOGIN</a>
+          <a href="../../pages/admin/login.html" class="navbar__link">LOGIN</a>
         </li>
         <li class="navbar__item">
-          <a href="./pages/cart.html" class="navbar__cart">
-            <img src="./img/icons/cart-icon.svg" alt="Ícono de carrito">
+          <a href="../../pages/cart.html" class="navbar__cart">
+            <img src="../../img/icons/cart-icon.svg" alt="Ícono de carrito">
           </a>
         </li>
       </ul>
     </nav>
   </header>
-  <aside>
-    <p>BUSCAR
-    <form action="" method="GET">
-      <label><input type="text"></label></p>
+  <section class="filter container">
+  <aside class="collection__cover">
+    <p class="filter__text">BUSCAR
+    <form action="" method="GET" class="">
+      <label><input type="text" class="input__text"></label></p>
       <label>
-        <p>ORDENAR POR</p><select name="select" id="ordenar">
+        <p class="filter__text">ORDENAR POR</p><select  name="select" id="ordenar"  class="select__text">
           <option value="volvo">Volvo</option>
           <option value="saab">Saab</option>
           <option value="mercedes">Mercedes</option>
@@ -54,13 +55,13 @@
         </select>
       </label>
       <label>
-        <p>PRECIO</p>
-        <p>MIN<input type="text"> - MAX <input type="text"> </p>
-        <p>FILTRAR</p>
-        <label><input type="checkbox">Nuevos</label>
-        <label><input type="checkbox">OFERTAS</label>
-        <label><input type="checkbox">EDICION ESPECIAL</label>
-        <label><input type="checkbox">FAVORITOS</label>
+        <p class="filter__text">PRECIO</p>
+        <p class="filter__text"> MIN <input type="text" class="input__number" > - MAX  <input type="text" class="input__number"> </p>
+        <p class="filter__text">FILTRAR</p>
+        <p class="checkbox__text"><label><input type="checkbox">NUEVOS</label></p>
+        <p class="checkbox__text"><label><input type="checkbox">OFERTAS</label></p>
+        <p class="checkbox__text"><label><input type="checkbox">EDICION ESPECIAL</label></p>
+        <p class="checkbox__text"><label><input type="checkbox">FAVORITOS</label></p>
 
 
       </label>
@@ -68,6 +69,7 @@
     </form>
 
   </aside>
+  </section>
 
   <main class="main-container">
     <section class="collection container">
@@ -91,7 +93,7 @@
         </li>
       </ul>
       <picture>
-        <img src="img/branding/isotype.svg" alt="Isotipo">
+        <img src="../../img/branding/isotype.svg" alt="Isotipo">
       </picture>
     </nav>
     <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
