@@ -292,6 +292,78 @@ header {
   background-color: var(--primary-900);
 }
 
+/* Estilos de Pagina Flex & Grid*/
+
+/*
+.flex-container{
+  height: 512px;
+  background-color: white;
+  display: flex;
+  /*flex-wrap: wrap;
+  flex-flow: row-reverse wrap;
+  gap: 5px;
+ 
+}
+
+
+.flex-container > div {
+  width: 100px;
+  margin:10px;
+  background-color: rgb(250, 247, 247);
+  align-content: space-evenly;
+  place-content: center;
+  justify-content: center;
+}*/
+
+
+.grid-container {
+  display:grid;
+  width: 90%;
+  height: 2500px;
+  grid-template-columns:repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+
+}
+
+
+.grid-container > div {
+  /*grid-column: 1/4;*/
+  align-self: right;
+  text-align: right;
+  
+  
+}
+
+.grid-item4 {
+  grid-column-start:2;
+ 
+}
+.grid-item5 {
+  grid-column-start:3;
+ 
+}
+
+.grid-item6 {
+  grid-column-start:4;
+ 
+}
+
+.grid-item7 {
+  grid-column-start:2;
+ 
+}
+
+.grid-item8 {
+  grid-column-start:3;
+ 
+}
+
+.grid-item9 {
+  grid-column-start:4;
+ 
+}
+
 /* SLIDER */
 
 .slider {
