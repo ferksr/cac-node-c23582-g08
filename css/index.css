@@ -318,12 +318,10 @@ header {
 
 .grid-container {
   display:grid;
-  width: 90%;
-  height: 2500px;
+  width: 80%;
+  height: 1500px;
   grid-template-columns:repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-
-
+  grid-template-rows: repeat(2, 500px);
 }
 
 
