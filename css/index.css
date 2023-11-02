@@ -324,13 +324,37 @@ header {
   grid-template-rows: repeat(2, 500px);
 }
 
+.grid_container_item{
+  display:grid;
+  width: 80%;
+  height: 1200px;
+  margin: auto;
+  grid-template-columns:repeat(3, 1fr);
+  grid-template-rows: repeat(3, .5fr);
+}
 
 .grid-container > div {
   /*grid-column: 1/4;*/
   align-self: right;
-  text-align: right;
+  text-align: right;  
   
-  
+}
+
+.grid_item_item1 {
+  grid-column-start:1;
+}
+
+.grid_item_item2 {
+  grid-column-start:2;
+}
+
+.grid_item_item3 {
+  grid-column-start:3;
+}
+
+.grid-item4 {
+  grid-column-start:2;
+ 
 }
 
 .grid-item4 {
