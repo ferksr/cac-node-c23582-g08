@@ -277,6 +277,13 @@ header {
   padding-bottom: var(--spacing-20);
 }
 
+.collection__item_text {
+  font-family: var(--alternative-font);
+  font-size: var(--font-large);
+  font-weight: 300;
+  padding-bottom: var(--spacing-20);
+}
+
 .collection__link {
   display: inline-block;
   font-size: var(--font-medium);
@@ -320,6 +327,7 @@ header {
   display:grid;
   width: 80%;
   height: 1500px;
+  margin: auto;
   grid-template-columns:repeat(4, 1fr);
   grid-template-rows: repeat(2, 500px);
 }
@@ -425,6 +433,10 @@ header {
 
 .card-item__price {
   font-size: var(--font-small);
+}
+
+.card-item__item_price {
+  font-size: var(--font-jumbo);
 }
 
 .card-item__promo {
