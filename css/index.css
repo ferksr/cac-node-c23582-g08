@@ -93,6 +93,7 @@ img {
   margin: 0 auto;
 }
 
+
 /* HEADER */
 header {
   background-color: var(--dark-bg-solid);
@@ -224,6 +225,7 @@ header {
   padding: var(--spacing-4) var(--spacing-4);
 }
 
+
 .input__text{
   width: 200px;
   height: 30px;
@@ -242,6 +244,13 @@ header {
 .checkbox__text{
   font-size: var(--font-xsmall);
 
+}
+
+.add__text{
+  width: 200px;
+  height: 20px;
+  font-weight: bold;
+  
 }
 
 /* COLLECTIONS */
@@ -561,4 +570,10 @@ iconify-icon {
 
 .glide__arrow--right {
   right:-2;
+}
+
+/**Tables Styles*/
+.input__text{
+  width: 200px;
+  height: 30px;
 }
