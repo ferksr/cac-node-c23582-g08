@@ -94,6 +94,8 @@ img {
 }
 
 
+
+
 /* HEADER */
 header {
   background-color: var(--dark-bg-solid);
@@ -210,6 +212,14 @@ header {
   transition: all .3s ease-in-out;
 }
 
+.btn-danger
+{
+  display: inline-block;
+  font-size: var(--font-medium);
+  font-weight: 200;
+ 
+}
+
 .hero__link:hover {
   background-color: var(--primary-900);
   color: var(--light-font-solid);
@@ -287,6 +297,14 @@ header {
   padding-bottom: var(--spacing-20);
 }
 
+.collection__input { 
+  border-bottom: 2px solid var(--primary-solid);
+  border-right: none;
+  border-left: none;
+  border-top: none; 
+  margin: auto;
+}
+
 .collection__item_text {
   font-family: var(--alternative-font);
   font-size: var(--font-large);
@@ -309,28 +327,9 @@ header {
   background-color: var(--primary-900);
 }
 
+
+
 /* Estilos de Pagina Flex & Grid*/
-
-/*
-.flex-container{
-  height: 512px;
-  background-color: white;
-  display: flex;
-  /*flex-wrap: wrap;
-  flex-flow: row-reverse wrap;
-  gap: 5px;
- 
-}
-
-
-.flex-container > div {
-  width: 100px;
-  margin:10px;
-  background-color: rgb(250, 247, 247);
-  align-content: space-evenly;
-  place-content: center;
-  justify-content: center;
-}*/
 
 
 .grid-container {
@@ -486,6 +485,29 @@ header {
   display: none;
 }
 
+.login__container {
+  display:grid;
+  width: 80%;
+  margin: auto;
+  text-align: center; 
+  align-items: center;
+  padding: 50px;
+}
+
+.login__container > p {
+  /*grid-column: 1/4;*/
+  align-self: center;
+  text-align: center;  
+  
+}
+
+.login__text {
+  font-family: var(--alternative-font);
+  font-size: var(--font-jumbo);
+  color: var(--dark); 
+  font-weight: bold;
+  padding: var(--spacing-4) var(--spacing-4);
+}
 
 /* FOOTER */
 
