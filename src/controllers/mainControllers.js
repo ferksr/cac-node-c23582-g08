@@ -1,8 +1,8 @@
-const mainControllers= {
-    home: (req, res)=> res.render('index'),
-    contact: (req, res)=> res.send('Route for Contact View'),
-    about: (req, res)=> res.send('Route for about View'),
-    faqs: (req, res)=> res.send('Route for Faqs View'),
+const mainControllers = {
+    home: (req, res) => res.render('index'),
+    contact: (req, res) => res.render('contact'),
+    about: (req, res) => res.render('about'),
+    faqs: (req, res) => res.render('faqs'),
 }
 
-module.exports= mainControllers;
+module.exports = mainControllers;
