@@ -8,41 +8,12 @@
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar container">
-      <picture class="navbar__logo">
-        <a href="./index.html">
-          <img src="./img/branding/logo_light_horizontal.svg" alt="">
-        </a>
-      </picture>
-      <ul class="navbar__menu">
-        <li class="navbar__item with-submenu">
-          <a href="./pages/shop/shop.html" class="navbar__link with-icon">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
-          <ul class="submenu">
-            <li class="submenu__item"><a href="./pages/item/item.html" class="submenu__link">Funkos</a></li>
-            <li class="submenu__item"><a href="" class="submenu__link">Remeras</a></li>
-            <li class="submenu__item"><a href="" class="submenu__link">LLaveros</a></li>
-          </ul>
-        </li>
-        <li class="navbar__item">
-          <a href="./pages/contact.html" class="navbar__link">CONTACTO</a>
-        </li>
-        <li class="navbar__item">
-          <a href="./pages/admin/login.html" class="navbar__link">LOGIN</a>
-        </li>
-        <li class="navbar__item">
-          <a href="./pages/cart.html" class="navbar__cart">
-            <img src="./img/icons/cart-icon.svg" alt="Ícono de carrito">
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <%- include('partials/header.ejs') %>
   <section class="hero">
     <article class="hero__content container">
       <h3 class="hero__title">Nuevos Ingresos</h3>
       <p class="hero__text">Descubrí el próximo Funko pop de tu colección</p>
-      <a href="./pages/shop/shop.html" class="hero__link">SHOP</a>
+      <a href="./shop" class="hero__link">SHOP</a>
     </article>
   </section>
   <main class="main-container">
@@ -50,7 +21,7 @@
       <article class="collection__content">
         <h3 class="collection__title">STAR WARS & THE MANDALORIAN</h3>
         <p class="collection__text">Disfruta de una saga que sigue agregando personajes a su colección.</p>
-        <a href="./pages/shop/shop" class="collection__link">VER COLECCIÓN</a>
+        <a href="./shop" class="collection__link">VER COLECCIÓN</a>
       </article>
       <picture class="collection__cover">
         <img src="./img/star-wars/baby-yoda-1.webp" alt="Star Wars & The Mandalorian" >
@@ -60,7 +31,7 @@
       <article class="collection__content">
         <h3 class="collection__title">POKEMON INDIGO</h3>
         <p class="collection__text">Atrapa todos los que puedas y disfruta de una collecciòn llena de amigos.</p>
-        <a href="./pages/shop/shop" class="collection__link">VER COLECCIÓN</a>
+        <a href="./shop" class="collection__link">VER COLECCIÓN</a>
       </article>
       <picture class="collection__cover">
         <img src="./img/star-wars/vulpix-1.webp" alt="Vulpix & The Mandalorian ">
@@ -70,7 +41,7 @@
       <article class="collection__content">
         <h3 class="collection__title">HARRY POTTER</h3>
         <p class="collection__text">Revive los recuerdos de una saga llena de magia y encanto.</p>
-        <a href="./pages/shop/shop" class="collection__link">VER COLECCIÓN</a>
+        <a href="./shop" class="collection__link">VER COLECCIÓN</a>
       </article>
       <picture class="collection__cover">
         <img src="./img/star-wars/snape-patronus-1.webp" alt="Snape patronus & The Mandalorian">
@@ -160,16 +131,16 @@
     <nav class="navbar container">
       <ul class="navbar__item">
         <li class="navbar__item">
-          <a class="navbar__link href="./pages/shop/shop.html">SHOP</a>
+          <a class="navbar__link href="./shop">SHOP</a>
         </li>
         <li class="navbar__item">
-          <a class="navbar__link href="./pages/register.html">REGISTRARSE</a>
+          <a class="navbar__link href="./register.html">REGISTRARSE</a>
         </li>
         <li class="navbar__item">
-          <a class="navbar__link href="./pages/admin/login.html">LOGIN</a>
+          <a class="navbar__link href="./login.html">LOGIN</a>
         </li>
         <li class="navbar__item">
-          <a class="navbar__link href="./pages/admin/contact.html">CONTACTO</a>
+          <a class="navbar__link href="./contact.html">CONTACTO</a>
         </li>
       </ul>
       <picture>
