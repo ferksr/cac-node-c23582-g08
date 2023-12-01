@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shop | Funkoshop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+</head>
+
+<body>
+  <%- include('partials/adminHeader.ejs') %>
+
+  <main class="main-container">
+   
+    <section class="login__container"> 
+      <article class>
+        <p class="login__text">INGRESAR A MI CUENTA </p>  
+        <div class="container mt-5 justify-content-center">
+          <div class="row justify-content-center">
+            <div class="col-sm-2 text-start">
+              <p>Email:</p>
+            </div>  
+            <div class="col-sm-3">
+              <p><input type="input" class="collection__input"></input></p>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-sm-2 text-start">
+              <p>Contraseña:</p>
+            </div>  
+            <div class="col-sm-3">
+              <p><input type="password" class="collection__input"></input></p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center mt-5">
+          <div class="col-sm-2">
+            <button type="button" class="btn btn-danger">Ingresar</button>
+          </div>
+          <div class="col-sm-2 text-start">
+            <label class="d-flex align-items-center fs-4">
+              <input type="checkbox" class="me-2" value="">
+              Recordarme
+            </label>
+          </div>
+        </div>
+        </article>
+    </section>
+    </main>
+  
+  <%- include('partials/adminFooter.ejs') %>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>
