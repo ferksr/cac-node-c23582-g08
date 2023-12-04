@@ -1,41 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Funkoshop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
 
-  <title>Shop | Funkoshop</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="../../css/index.css">
-</head>
+  <body>
+    <%- include('partials/adminHeader.ejs') %>
+    <main class="main-container">
+      <section class="container mt-3">
+        <div class="container">
+          <div class="row">
+            <p class="login__text">EDITAR ITEM</p>
+          </div>
+          <form action="">
+            <div class="row mb-4">
+              <div class="col d-flex align-items-center">
+                <p class="m-0">Categoría</p>
+                <select
+                  id="category"
+                  name="category"
+                  class="ms-3 col-2 fs-3 me-5"
+                >
+                  <option value="test">Test</option>
+                </select>
+                <p class="m-0">Licencia</p>
+                <select id="licencia" name="licencia" class="ms-3 col-2 fs-3">
+                  <option value="test">Test</option>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col d-flex align-items-center">
+                <p class="m-0">Nombre del producto</p>
+                <input type="text" class="collection__input ms-3 col-2 fs-3" />
+              </div>
+            </div>
+            <div class="row mb-4">
+              <textarea
+                name="description"
+                id="description"
+                cols="15"
+                rows="5"
+                class="col-5 fs-3"
+                placeholder="Descripción"
+              ></textarea>
+            </div>
+            <!-- Line 4: SKU + input, Price + input, Stock + input -->
+            <div class="row mb-4">
+              <div class="col d-flex align-items-center">
+                <p class="mb-0">SKU</p>
+                <input type="text" class="ms-3 col-2 fs-3 me-5" />
+                <p class="mb-0">Precio</p>
+                <input type="text" class="ms-3 col-2 fs-3 me-5" />
+                <p class="mb-0">Stock</p>
+                <input type="text" class="ms-3 col-2 fs-3" />
+              </div>
+            </div>
 
-<body>
-  <%- include('partials/adminHeader.ejs') %>
-  <main class="main-container">
-   
-  <section class="main-container"> 
-    <aside >
-      <p class="login__text">EDITAR ITEM </p>  
-      <p >Categoria:  <select class="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select> </p>
-      <p>Cotraseña:  <input type="password"  class=" collection__input" ></input></p>
-      <p></p><button type="button" class="btn btn-danger">Ingresar</button>     
-        <input type="checkbox" value="" > Recordarme</p>
-        <p class="card-item__promo">Olvidè mi contraseña</p>
-    </aside>
-  </section>
-  </main>
-  
-  <%- include('partials/adminFooter.ejs') %>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-</body>
+            <!-- Line 5: Discount + input, Cuotes + dropdown -->
+            <div class="row mb-4">
+              <div class="col d-flex align-items-center">
+                <p class="mb-0">Descuento</p>
+                <input type="text" class="ms-3 col-2 fs-3 me-5" />
+                <p class="mb-0">Cuotas</p>
+                <select class="ms-3 col-2 fs-3">
+                  <option value="test">Test</option>
+                </select>
+              </div>
+            </div>
 
+            <!-- Line 6: Images + File upload button -->
+            <div class="row mb-4">
+              <div class="col d-flex align-items-center">
+                <p class="mb-0">Images</p>
+                <input type="file" class="ms-3 col-5 fs-3" />
+              </div>
+            </div>
+
+            <!-- Line 8: Frenteimage (harry-1.webp) + caption, Dorso image (harry-box.webp) + caption -->
+            <div class="container mb-4">
+              <div class="row">
+                <!-- Frente image -->
+                <div class="col-6 col-sm-2">
+                  <div class="text-center">
+                    <img src="/img/harry-potter/harry-1.webp" alt="Frenteimage" class="ms-3 col-12 fs-3 img-fluid" />
+                    <p class="m-0">Frente</p>
+                  </div>
+                </div>
+                
+                <!-- Dorso image -->
+                <div class="col-6 col-sm-2">
+                  <div class="text-center">
+                    <img src="/img/harry-potter/harry-box.webp" alt="Dorso image" class="ms-3 col-12 fs-3 img-fluid" />
+                    <p class="m-0">Dorso</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+
+            <!-- Line 7: Add Producto button + Clear form button -->
+            <div class="row mb-4">
+              <div class="col d-flex align-items-center">
+                <button type="submit" class="btn btn-danger">
+                  Editar producto
+                </button>
+                <button type="reset" class="btn btn-danger ms-3">
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <%- include('partials/adminFooter.ejs') %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  </body>
 </html>
