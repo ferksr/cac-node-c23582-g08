@@ -599,3 +599,7 @@ iconify-icon {
   width: 200px;
   height: 30px;
 }
+
+.cart__image {
+  width: 25%;
+}
