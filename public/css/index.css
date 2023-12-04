@@ -130,6 +130,10 @@ header {
   background-color: var(--primary-900);
 }
 
+.chevron {
+  color: var(--light-font-solid);
+}
+
 .with-icon {
   display: flex;
   align-items: center;
