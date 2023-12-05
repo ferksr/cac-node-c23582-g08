@@ -4,17 +4,8 @@ const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
 const path = require('path');
-const mysql = require('mysql');
 
-// Configuración de la conexión a la base de datos
-const dbConnection = mysql.createPool({
-  connectionLimit: 10,
-  host: 'sql10.freesqldatabase.com',
-  user: 'sql10627826',
-  password: 'YH6I5nV7ny',
-  database: 'sql10627826',
-  port: 3306,
-});
+const dbConnection = require('./src/database');
 
 // Asignar la conexión a la aplicación
 app.locals.db = dbConnection;
