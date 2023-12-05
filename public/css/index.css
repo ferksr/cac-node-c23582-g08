@@ -231,9 +231,11 @@ header {
 
   display: grid;
   grid-template-columns: repeat(2,500px);
-  align-items: start;
-  margin: auto;
+  align-items: auto;
+  margin: var(--spacing-36) auto;
+  padding: auto;
  }
+ 
 .filter__text {
   font-family: var(--alternative-font);
   font-size: var(--font-medium);
