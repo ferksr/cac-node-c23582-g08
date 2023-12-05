@@ -229,13 +229,13 @@ header {
 
 .filter {
 
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(2,500px);
   align-items: auto;
   margin: var(--spacing-36) auto;
   padding: auto;
  }
- 
+
 .filter__text {
   font-family: var(--alternative-font);
   font-size: var(--font-medium);
