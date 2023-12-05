@@ -11,7 +11,19 @@ const getProducts = async () => {
     }
 }
 
+const getFeaturedProducts = async () => {
+    try {
+        const [products] = await conn.query('SELECT * FROM product pr JOIN category ca ON pr.category_id = ca.category_id LIMIT 10;');
+        return products;
+    } catch (error){
+        throw error;
+    } finally {
+        conn.releaseConnection();
+    }
+}
+
 
 module.exports = {
-    getProducts
+    getProducts,
+    getFeaturedProducts
 }
