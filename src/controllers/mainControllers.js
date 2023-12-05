@@ -2,11 +2,12 @@ const featuredProducts = require('../models/products.js');
 
 const mainControllers = {
     home: async (req, res) => { 
-        const listProducts= await featuredProducts.getFeaturedProducts();
+        const listProducts = await featuredProducts.getFeaturedProducts();
+        const listLicenses = await featuredProducts.getFeaturedLicenses();
 
-        console.log(listProducts);
         res.render('index', {
-            list: listProducts
+            products: listProducts,
+            licenses: listLicenses
         });
     },
     contact: (req, res) => res.render('index'),

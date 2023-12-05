@@ -28,16 +28,31 @@ const getProductsByName = async(params) => {
 
 const getFeaturedProducts = async () => {
     try {
-        const [products] = await conn.query(`
-            SELECT pr.*, ca.*, l.licence_name
+        const [featuredProducts] = await conn.query(`
+            SELECT pr.*, ca.*, li.*
             FROM product pr
             JOIN category ca ON pr.category_id = ca.category_id
-            JOIN licence l ON pr.licence_id = l.licence_id
+            JOIN licence li ON pr.licence_id = li.licence_id
             ORDER BY pr.product_id ASC
             LIMIT 10;
         `);
-        return products;
+        return featuredProducts;
+    } catch (error){
+        throw error;
+    } finally {
+        conn.releaseConnection();
+    }
+}
 
+const getFeaturedLicenses = async () => {
+    try {
+        const [licenses] = await conn.query(`
+            SELECT li.*
+            FROM licence li
+            ORDER BY li.licence_id ASC
+            LIMIT 3;
+        `);
+        return licenses;
     } catch (error){
         throw error;
     } finally {
@@ -46,10 +61,9 @@ const getFeaturedProducts = async () => {
 }
 
 
-
 module.exports = {
     getProducts,
     getFeaturedProducts,
+    getFeaturedLicenses,
     getProductsByName
-
 }
