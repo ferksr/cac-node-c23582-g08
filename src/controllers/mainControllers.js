@@ -1,8 +1,8 @@
-const products = require('../models/products.js');
+const featuredProducts = require('../models/products.js');
 
 const mainControllers = {
     home: async (req, res) => { 
-        const listProducts= await products.getFeaturedProducts();
+        const listProducts= await featuredProducts.getFeaturedProducts();
 
         console.log(listProducts);
         res.render('index', {

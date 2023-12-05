@@ -13,7 +13,14 @@ const getProducts = async () => {
 
 const getFeaturedProducts = async () => {
     try {
-        const [products] = await conn.query('SELECT * FROM product pr JOIN category ca ON pr.category_id = ca.category_id LIMIT 10;');
+        const [products] = await conn.query(`
+            SELECT pr.*, ca.*, l.licence_name
+            FROM product pr
+            JOIN category ca ON pr.category_id = ca.category_id
+            JOIN licence l ON pr.licence_id = l.licence_id
+            ORDER BY pr.product_id ASC
+            LIMIT 10;
+        `);
         return products;
     } catch (error){
         throw error;
@@ -21,7 +28,6 @@ const getFeaturedProducts = async () => {
         conn.releaseConnection();
     }
 }
-
 
 module.exports = {
     getProducts,
