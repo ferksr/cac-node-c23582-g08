@@ -17,41 +17,23 @@
     </article>
   </section>
   <main class="main-container">
-    <section class="collection container">
-      <article class="collection__content">
-        <h3 class="collection__title">STAR WARS & THE MANDALORIAN</h3>
-        <p class="collection__text">Disfruta de una saga que sigue agregando personajes a su colección.</p>
-        <a href="./shop" class="collection__link">VER COLECCIÓN</a>
-      </article>
-      <picture class="collection__cover">
-        <img src="./img/star-wars/baby-yoda-1.webp" alt="Star Wars & The Mandalorian" >
-      </picture>
-    </section>
-    <section class="collection container">
-      <article class="collection__content">
-        <h3 class="collection__title">POKEMON INDIGO</h3>
-        <p class="collection__text">Atrapa todos los que puedas y disfruta de una collecciòn llena de amigos.</p>
-        <a href="./shop" class="collection__link">VER COLECCIÓN</a>
-      </article>
-      <picture class="collection__cover">
-        <img src="./img/star-wars/vulpix-1.webp" alt="Vulpix & The Mandalorian ">
-      </picture>
-    </section>
-    <section class="collection container">
-      <article class="collection__content">
-        <h3 class="collection__title">HARRY POTTER</h3>
-        <p class="collection__text">Revive los recuerdos de una saga llena de magia y encanto.</p>
-        <a href="./shop" class="collection__link">VER COLECCIÓN</a>
-      </article>
-      <picture class="collection__cover">
-        <img src="./img/star-wars/snape-patronus-1.webp" alt="Snape patronus & The Mandalorian">
-      </picture>
-    </section>
+    <% licenses.forEach(license => { %>
+      <section class="collection container">
+          <article class="collection__content">
+              <h3 class="collection__title"><%= license.licence_name %></h3>
+              <p class="collection__text"><%= license.licence_description %></p>
+              <a href="./shop" class="collection__link">VER COLECCIÓN</a>
+          </article>
+          <picture class="collection__cover">
+              <img src="<%= license.licence_image %>" alt="<%= license.licence_name %>">
+          </picture>
+      </section>
+  <% }); %>
     <section class="slider container glide">
       <h2 class="slider__title">Últimos lanzamientos</h2>
       <div class="glide__track" data-glide-el="track">
        <ul class="slider__items glide__slides">
-        <% list.forEach(product => { %>
+        <% products.forEach(product => { %>
           <li class="slider__item glide__slide">
             <article class="card-item">
               <a class="card-item__link" href="/shop/item/<%= product.product_id %>">
