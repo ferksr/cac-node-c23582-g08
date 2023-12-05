@@ -11,6 +11,7 @@ const getProducts = async () => {
     }
 }
 
+
 const getProductsByName = async(params) => {
 
     const {category,product_name, price} = params;
@@ -25,9 +26,30 @@ const getProductsByName = async(params) => {
     }
 }
 
+const getFeaturedProducts = async () => {
+    try {
+        const [products] = await conn.query(`
+            SELECT pr.*, ca.*, l.licence_name
+            FROM product pr
+            JOIN category ca ON pr.category_id = ca.category_id
+            JOIN licence l ON pr.licence_id = l.licence_id
+            ORDER BY pr.product_id ASC
+            LIMIT 10;
+        `);
+        return products;
+
+    } catch (error){
+        throw error;
+    } finally {
+        conn.releaseConnection();
+    }
+}
+
 
 
 module.exports = {
     getProducts,
+    getFeaturedProducts,
     getProductsByName
+
 }
