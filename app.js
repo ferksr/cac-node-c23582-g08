@@ -25,6 +25,18 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'));
 
 // Crear un pool de conexiones
+// ...
+app.get('/getTableColumns/:tableName', (req, res) => {
+  const tableName = req.params.tableName;
+  pool.query(`SELECT column_name FROM information_schema.columns WHERE table_name = ?`, [tableName], (error, results) => {
+    if (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'Error retrieving data from the database' });
+    }
+    res.json(results);
+  });
+});
+// ...
 const pool = mysql.createPool(dbConfig);
 
 // Definir una ruta para obtener los nombres de las tablas de la base de datos

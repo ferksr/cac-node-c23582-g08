@@ -1,49 +1,65 @@
-<!DOCTYPE html> <!-- Declaración del tipo de documento -->
-<html lang="en"> <!-- Inicio del documento HTML con el atributo de idioma establecido en inglés -->
+<!DOCTYPE html>
+<html lang="en">
 
-<head> <!-- Inicio de la sección de encabezado del documento -->
-  <meta charset="UTF-8"> <!-- Definición del conjunto de caracteres para el documento -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Asegura que la página sea responsive -->
-  <title>Database Info</title> <!-- Título de la página web -->
-</head> <!-- Fin de la sección de encabezado del documento -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Info</title>
+</head>
 
-<body> <!-- Inicio del cuerpo del documento -->
-  <h1>Data from Database</h1> <!-- Título principal de la página -->
-  <h2>Table Names</h2> <!-- Subtítulo para los nombres de las tablas -->
-  <ul id="tableList"></ul> <!-- Lista donde se mostrarán los nombres de las tablas -->
-  <h2>Products</h2> <!-- Subtítulo para los productos -->
-  <ul id="productList"></ul> <!-- Lista donde se mostrarán los productos -->
-
-  <script> <!-- Inicio del script de JavaScript -->
-    document.addEventListener('DOMContentLoaded', fetchData); // Escucha el evento de carga del DOM y llama a la función fetchData
-
-    async function fetchData() { // Función asíncrona para obtener los datos
+<body>
+  <h1>Data from Database</h1>
+  <h2>Table Names</h2>
+  <ul id="tableList"></ul>
+  <h2>Table Columns</h2>
+  <div id="columnSection"></div>
+  <h2>Products</h2>
+  <ul id="productList"></ul>
+  <script>
+    async function fetchData() {
       try {
-        const tableResponse = await fetch('/getData'); // Realiza una solicitud GET a la ruta '/getData'
-        const tableData = await tableResponse.json(); // Convierte la respuesta en JSON
+        const tableResponse = await fetch('/getData');
+        const tableData = await tableResponse.json();
 
-        const productResponse = await fetch('/getProducts'); // Realiza una solicitud GET a la ruta '/getProducts'
-        const productData = await productResponse.json(); // Convierte la respuesta en JSON
+        const productResponse = await fetch('/getProducts');
+        const productData = await productResponse.json();
 
-        const tableList = document.getElementById('tableList'); // Obtiene el elemento con id 'tableList'
-        const productList = document.getElementById('productList'); // Obtiene el elemento con id 'productList'
+        const tableList = document.getElementById('tableList');
+        const columnSection = document.getElementById('columnSection');
+        const productList = document.getElementById('productList');
 
-        tableData.forEach(item => { // Para cada elemento en tableData
-          const listItem = document.createElement('li'); // Crea un nuevo elemento li
-          listItem.textContent = JSON.stringify(item); // Asigna el contenido del elemento li a la cadena JSON del elemento
-          tableList.appendChild(listItem); // Agrega el elemento li a la lista de tablas
+        for (const item of tableData) {
+          const listItem = document.createElement('li');
+          listItem.textContent = JSON.stringify(item);
+          tableList.appendChild(listItem);
+
+          const columnsResponse = await fetch(`/getTableColumns/${item.table_name}`);
+          const columnsData = await columnsResponse.json();
+
+          const tableTitle = document.createElement('h3');
+          tableTitle.textContent = item.table_name;
+          columnSection.appendChild(tableTitle);
+
+          const columnList = document.createElement('ul');
+          columnsData.forEach(column => {
+            const columnItem = document.createElement('li');
+            columnItem.textContent = column.column_name;
+            columnList.appendChild(columnItem);
+          });
+          columnSection.appendChild(columnList);
+        }
+
+        productData.forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.textContent = JSON.stringify(item);
+          productList.appendChild(listItem);
         });
-
-        productData.forEach(item => { // Para cada elemento en productData
-          const listItem = document.createElement('li'); // Crea un nuevo elemento li
-          listItem.textContent = JSON.stringify(item); // Asigna el contenido del elemento li a la cadena JSON del elemento
-          productList.appendChild(listItem); // Agrega el elemento li a la lista de productos
-        });
-      } catch (error) { // En caso de error
-        console.error('Error fetching data:', error); // Imprime el error en la consola
+      } catch (error) {
+        console.error('Error fetching data:', error);
       }
     }
-  </script> <!-- Fin del script de JavaScript -->
-</body> <!-- Fin del cuerpo del documento -->
+    fetchData();
+  </script>
+</body>
 
-</html> <!-- Fin del documento HTML -->
+</html>
