@@ -1,5 +1,15 @@
+const products = require('../models/products.js');
+
 const shopControllers = {
-    shop: (req, res) => res.render('shop'),
+    shop: async (req, res) => { 
+        const listProducts= await products.getProducts();
+
+        console.log(listProducts);
+        res.render('shop', {
+            list: listProducts
+        });
+    },
+    
     item: (req, res) => res.render('item'),
     cart: (req, res) => res.render('cart'),
 }
