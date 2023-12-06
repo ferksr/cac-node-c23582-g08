@@ -280,7 +280,10 @@ header {
   align-items: center;
   padding: var(--spacing-16) 0;
 }
-
+.collection__cover {
+  display: flex;
+  position: relative;
+}
 .collection:nth-child(2) .collection__cover {
   order: -1;
 }

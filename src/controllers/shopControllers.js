@@ -8,12 +8,14 @@ const shopControllers = {
         });                
     },
     
-    item: async (req, res) => {        
-        const item_name = req.params.product_name;
-        const item_details = await products.getProductsByName(item_name); 
-        console.log(item_details)   
-        res.render('item', {
-            item : item_details
+    item: async (req, res) => {     
+         const product= req.params.product_id;
+          const item_detail = await products.getProductsById(product); 
+          const items = await products.getProducts();  
+          console.log(item_detail)   
+          res.render('item', {
+              item : item_detail,
+              list: items
         } )},
     cart: (req, res) => res.render('cart'),
 }
