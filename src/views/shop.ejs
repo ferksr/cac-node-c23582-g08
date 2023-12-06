@@ -41,8 +41,8 @@
     <section class="grid-container">     
       <% list.forEach( products => { %>
       <div class="grid-item1">
-        <article class="card-item">
-          <a class="card-item__link" method="GET" enctype="application/x-www-form-urlencoded" href="./item" >
+        <article class="card-item" >
+          <a class="card-item__link"  href="./shop/item/<%= products.product_id %>">
             <picture class="card-item__cover"  >
               <span class="card-item__tag">Nuevo</span>
               <img class="card-item__img__front" src="<../../img/<%= products.image_front %>" alt="Stormtrooper">
@@ -50,7 +50,7 @@
             </picture>
             <div class="card-item__content">
               <p class="card-item__license" ><%= products.category_name %></p>
-              <h4 class="card-item__name"><%= products.product_name %></h4>
+              <h4 class="card-item__name" ><%= products.product_name %></h4>
               <p class="card-item__price"><%= products.price  %></p>
               <p class="card-item__promo"><%= products.discount  %> % de Descuento</p>
             </div>
