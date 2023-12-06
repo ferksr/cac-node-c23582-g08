@@ -9,6 +9,10 @@
   ],
   "routes": [
     {
+      "src": "/(css|img)/(.*)",
+      "dest": "/public/$1/$2"
+    },
+    {
       "src": "/(.*)",
       "dest": "index.js"
     }
