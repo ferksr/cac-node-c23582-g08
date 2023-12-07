@@ -6,5 +6,7 @@ router.get('/', mainControllers.home);
 router.get('/contact', mainControllers.contact);
 router.get('/about', mainControllers.about);
 router.get('/faqs', mainControllers.faqs);
+router.get('/login', mainControllers.login);
+router.post('/login',mainControllers.loginPost);
 
 module.exports = router;

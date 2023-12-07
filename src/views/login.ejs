@@ -17,16 +17,16 @@
 
   <main class="main-container">
    
-    <section class="login__container"> 
+    <form action="/login" class="login__container" method="POST" enctype="application/x-www-form-urlencoded"> 
       <article class>
         <p class="login__text">INGRESAR A MI CUENTA </p>  
         <div class="container mt-5 justify-content-center">
           <div class="row justify-content-center">
             <div class="col-sm-2 text-start">
-              <p>Email:</p>
+              <p for="email">Email:</p>
             </div>  
             <div class="col-sm-3">
-              <p><input type="input" class="collection__input"></input></p>
+              <p><input id="email" name="email"  type="input" class="collection__input" required></input></p>
             </div>
           </div>
           <div class="row justify-content-center">
@@ -34,13 +34,13 @@
               <p>Contraseña:</p>
             </div>  
             <div class="col-sm-3">
-              <p><input type="password" class="collection__input"></input></p>
+              <p><input  type="password" id="password" name="password" class="collection__input" required></input></p>
             </div>
           </div>
         </div>
         <div class="row justify-content-center align-items-center mt-5">
           <div class="col-sm-2">
-            <button type="button" class="btn btn-danger">Ingresar</button>
+            <button type="submit" class="btn btn-danger" href="/admin/admin" >Ingresar</button>
           </div>
           <div class="col-sm-2 text-start">
             <label class="d-flex align-items-center fs-4">
@@ -50,7 +50,7 @@
           </div>
         </div>
         </article>
-    </section>
+      </form>
     </main>
   
   <%- include('partials/adminFooter.ejs') %>
