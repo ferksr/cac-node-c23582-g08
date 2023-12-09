@@ -31,11 +31,11 @@
       <% list.forEach( products => { %>
       <div class="grid-item1">
         <article class="card-item" >
-          <a class="card-item__link"  href="./shop/item/<%= products.product_id %>">
+          <a class="card-item__link"  href="/shop/item/<%= products.product_id %>">
             <picture class="card-item__cover"  >
               <span class="card-item__tag">Nuevo</span>
-              <img class="card-item__img__front" src="<../../img/<%= products.image_front %>" alt="Stormtrooper">
-              <img class="card-item__img__back" src="<../../img/<%= products.image_back %>" alt="Stormtrooper en su caja">
+              <img class="card-item__img__front" src="/img/<%= products.image_front %>" alt="Stormtrooper">
+              <img class="card-item__img__back" src="/img/<%= products.image_back %>" alt="Stormtrooper en su caja">
             </picture>
             <div class="card-item__content">
               <p class="card-item__license" ><%= products.category_name %></p>
