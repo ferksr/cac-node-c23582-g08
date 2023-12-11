@@ -4,6 +4,7 @@ const adminRoutes = require('./src/routes/adminRoutes');
 const bodyParser = require('body-parser'); 
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
 
 const port = process.env.PORT || 3000;
 
@@ -14,6 +15,11 @@ app.set('views', path.join(__dirname, '/src/views'));
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.set('views');
+app.use(session({
+  secret: 'your secret key',
+  resave: false,
+  saveUninitialized: true
+}));
 
 
 // Middleware para analizar el cuerpo de la solicitud

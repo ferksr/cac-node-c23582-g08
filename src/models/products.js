@@ -58,10 +58,22 @@ const getFeaturedLicenses = async () => {
     }
 }
 
+const createProduct = async (productData) => {
+    try {
+        const [result] = await conn.query('INSERT INTO product SET ?', productData);
+        return result;
+    } catch (error) {
+        throw error;
+    } finally {
+        conn.releaseConnection();
+    }
+}
+
 
 module.exports = {
     getProducts,
     getFeaturedProducts,
     getFeaturedLicenses,
-    getProductsById
+    getProductsById,
+    createProduct
 }

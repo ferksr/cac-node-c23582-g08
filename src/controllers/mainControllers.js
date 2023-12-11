@@ -27,6 +27,7 @@ const mainControllers = {
         if(validate === undefined){
 			res.redirect('/login/?error=1')
 		} else {
+            req.session.userId = validate.user_id;
 			res.redirect(`/admin/admin/${validate.user_id}`)
 		}
     
