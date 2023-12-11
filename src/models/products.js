@@ -2,7 +2,7 @@ const {conn} = require('./conn.js');
 
 const getProducts = async () => {
     try {
-        const [products] = await conn.query('SELECT * FROM product pr join category ca on pr.category_id= ca.category_id JOIN licence li ON pr.licence_id = li.licence_id;');
+        const [products] = await conn.query('SELECT * FROM product pr join category ca on pr.category_id= ca.category_id JOIN licence li ON pr.licence_id = li.licence_id ORDER BY pr.product_id ASC;');
         return products;
     } catch (error){
         throw error;
