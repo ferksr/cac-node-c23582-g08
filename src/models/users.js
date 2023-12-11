@@ -15,3 +15,9 @@ module.exports = {
     validateLogin,
  
 }
+
+/* { email: 'prueba1@hotmail.com', password: 'asdfasdf' },
+  { email: 'prueba2@hotmail.com', password: 'asdf' },
+  { email: 'vladimir.delcid@bue.edu.ar', password: 'qwerty' },
+  {
+] */
