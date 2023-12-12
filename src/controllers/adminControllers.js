@@ -13,7 +13,7 @@ const adminControllers = {
    create: async (req, res) => {
     const categories = await products.getCategories();
     const licenses = await products.getLicenses();
-    res.render("/admin/create", {
+    res.render("admin/create", {
       categories: categories,
       licenses: licenses,
     });
