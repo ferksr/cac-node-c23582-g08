@@ -3,12 +3,12 @@ const products = require('../models/products.js');
 const adminControllers = {
   admin:  async (req, res) => {     
     const product= req.params.id;
-     const item_detail = await products.getProductsById(product); 
-     const items = await products.getProducts();  
-     console.log(item_detail)   
+     const product_detail = await products.getProductsById(product); 
+     const products = await products.getProducts();  
+     console.log(product_detail)   
      res.render('admin', {
-         item : item_detail,
-         list: items
+         product : product_detail,
+         list: products
    } )} ,
    create: async (req, res) => {
     const categories = await products.getCategories();
@@ -71,7 +71,7 @@ const adminControllers = {
       license_id: product.license,
       category_id: product.category,
     };
-    await product.createProduct(itemSchema);
+    await product.createProduct(productSchema);
     res.redirect("/admin/admin");
   },
 }

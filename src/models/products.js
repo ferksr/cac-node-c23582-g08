@@ -15,8 +15,8 @@ const getProducts = async () => {
 const getProductsById = async(product) => {
    
     try {
-        const [item] = await conn.query(`SELECT * FROM product pr join category ca on pr.category_id= ca.category_id where pr.product_id=${product};`);
-        return item;
+        const [product] = await conn.query(`SELECT * FROM product pr join category ca on pr.category_id= ca.category_id where pr.product_id=${product};`);
+        return product;
     } catch (error){
         throw error;
     } finally {
