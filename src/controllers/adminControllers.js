@@ -4,11 +4,11 @@ const adminControllers = {
   admin:  async (req, res) => {     
     const product= req.params.id;
      const product_detail = await products.getProductsById(product); 
-     const products = await products.getProducts();  
+     const productList = await products.getProducts();  
      console.log(product_detail)   
      res.render('admin', {
          product : product_detail,
-         list: products
+         list: productList
    } )} ,
    create: async (req, res) => {
     const categories = await products.getCategories();
