@@ -71,8 +71,8 @@ const adminControllers = {
       discount: product.discount,
       sku: product.sku,
       dues: product.dues,
-      image_front: product.frontImage,
-      image_back: product.backImage,
+      image_front: product.image_front,
+      image_back: product.image_back,
       licence_id: parseInt(product.licence_id),
       category_id: parseInt(product.category_id),
     };

@@ -106,13 +106,14 @@ const editProduct = async (params, id) => {
   
 	  return response;
 	} catch (e) {
-	  const error = {
-		isError: true,
-		message: `Producto no modificado`
-	  };
-  
-	  return error;
-	} finally {
+    console.error(e);
+    const error = {
+      isError: true,
+      message: `Producto no modificado`
+    };
+ 
+    return error;
+  } finally {
 	  await conn.releaseConnection();
 	}
   };

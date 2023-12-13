@@ -18,7 +18,7 @@
                 <p class="m-0">Licencia</p>
                 <select class="ms-3 col-2 fs-3" name="licence_id" id="licence"  required>
                     <% licences.forEach((licence, i) => { %>
-                        <option <% if (product.licence_id === i +1) { %>selected<% } %> value="<%=i +2%>"><%= licence.licence_name%></option>
+                        <option <% if (product.licence_id === i +1) { %>selected<% } %> value="<%=i +1%>"><%= licence.licence_name%></option>
                     <% }); %>
                 </select></label>
               </div>
@@ -92,7 +92,14 @@
               </div>
             </div>
             
-            
+            <div class="row mb-4">
+              <div class="col d-flex align-items-center">
+                <p class="mb-0">Front Image URL</p>
+                <input name="image_front" value="<%= product.image_front %>" type="text" class="ms-3 col-2 fs-3 me-5" />
+                <p class="mb-0">Back Image URL</p>
+                <input name="image_back" value="<%= product.image_back %>" type="text" class="ms-3 col-2 fs-3" />
+              </div>
+            </div>
             
 
             <!-- Line 7: Add Producto button + Clear form button -->
