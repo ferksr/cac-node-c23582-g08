@@ -6,27 +6,27 @@
           <div class="row">
             <p class="login__text">EDITAR PRODUCTO</p>
           </div>
-          <form action="">
+          <form action="/admin/edit/<%= product.product_id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
             <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="m-0">Categoría</p>
-                <select
-                  id="category"
-                  name="category"
-                  class="ms-3 col-2 fs-3 me-5"
-                >
-                  <option value="test">Test</option>
-                </select>
+                <select name="category" id="category" class="ms-3 col-2 fs-3 me-5" required >
+                  <% categories.forEach((category, i) =>{ %>
+                      <option <% if (product.category_id === i +1) { %>selected<% } %> value="<%= i+1 %>"><%= category.category_name%></option>
+                  <% }); %>
+              </select>
                 <p class="m-0">Licencia</p>
-                <select id="licencia" name="licencia" class="ms-3 col-2 fs-3">
-                  <option value="test">Test</option>
-                </select>
+                <select class="ms-3 col-2 fs-3" name="collection" id="collection"  required>
+                    <% licences.forEach((licence, i) => { %>
+                        <option <% if (product.licence_id === i +1) { %>selected<% } %> value="<%=i +2%>"><%= licence.licence_name%></option>
+                    <% }); %>
+                </select></label>
               </div>
             </div>
             <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="m-0">Nombre del producto</p>
-                <input type="text" class="collection__input ms-3 col-2 fs-3" />
+                <input name="name" value="<%= product.product_name %>" required type="text" class="collection__input ms-3 col-2 fs-3" />
               </div>
             </div>
             <div class="row mb-4">
@@ -37,17 +37,17 @@
                 rows="5"
                 class="col-5 fs-3"
                 placeholder="Descripción"
-              ></textarea>
+              ><%= product.product_description %></textarea>
             </div>
             <!-- Line 4: SKU + input, Price + input, Stock + input -->
             <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="mb-0">SKU</p>
-                <input type="text" class="ms-3 col-2 fs-3 me-5" />
+                <input name="sku" value="<%= product.sku %>" type="text" class="ms-3 col-2 fs-3 me-5" />
                 <p class="mb-0">Precio</p>
-                <input type="text" class="ms-3 col-2 fs-3 me-5" />
+                <input name="price" value="<%= product.price %>" type="text" class="ms-3 col-2 fs-3 me-5" />
                 <p class="mb-0">Stock</p>
-                <input type="text" class="ms-3 col-2 fs-3" />
+                <input name="stock" value="<%= product.stock %>" type="text" class="ms-3 col-2 fs-3" />
               </div>
             </div>
 
@@ -55,21 +55,21 @@
             <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="mb-0">Descuento</p>
-                <input type="text" class="ms-3 col-2 fs-3 me-5" />
+                <input name="discount" value="<%= product.discount %>" type="text" class="ms-3 col-2 fs-3 me-5" />
                 <p class="mb-0">Cuotas</p>
-                <select class="ms-3 col-2 fs-3">
-                  <option value="test">Test</option>
+                <select name="dues" class="ms-3 col-2 fs-3">
+                  <option value="3">3</option>
                 </select>
               </div>
             </div>
 
             <!-- Line 6: Images + File upload button -->
-            <div class="row mb-4">
+            <!-- <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="mb-0">Images</p>
                 <input type="file" class="ms-3 col-5 fs-3" />
               </div>
-            </div>
+            </div> -->
 
             <!-- Line 8: Frenteimage (harry-1.webp) + caption, Dorso image (harry-box.webp) + caption -->
             <div class="container mb-4">
@@ -77,7 +77,7 @@
                 <!-- Frente image -->
                 <div class="col-6 col-sm-2">
                   <div class="text-center">
-                    <img src="/img/harry-potter/harry-1.webp" alt="Frenteimage" class="ms-3 col-12 fs-3 img-fluid" />
+                    <img src="/img<%= product.image_front %>" alt="<%= product.product_name %>" class="ms-3 col-12 fs-3 img-fluid" />
                     <p class="m-0">Frente</p>
                   </div>
                 </div>
@@ -85,7 +85,7 @@
                 <!-- Dorso image -->
                 <div class="col-6 col-sm-2">
                   <div class="text-center">
-                    <img src="/img/harry-potter/harry-box.webp" alt="Dorso image" class="ms-3 col-12 fs-3 img-fluid" />
+                    <img src="/img<%= product.image_back %>" alt="<%= product.product_name %>" class="ms-3 col-12 fs-3 img-fluid" />
                     <p class="m-0">Dorso</p>
                   </div>
                 </div>
@@ -99,10 +99,10 @@
             <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <button type="submit" class="btn btn-danger">
-                  Editar producto
+                  Guardar
                 </button>
                 <button type="reset" class="btn btn-danger ms-3">
-                  Cancelar
+                  Reset
                 </button>
               </div>
             </div>
