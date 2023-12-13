@@ -3,7 +3,7 @@
 
   <main class="main-container">
    
-    <section class="login__container"> 
+    <form  action="/admin/register" class="login__container" method="POST" enctype="application/x-www-form-urlencoded" > 
       <article class>
         <p class="login__text">CREA TU CUENTA</p>  
         <p class="fs-1">Completa el formulario para ser parte del mundo de los Funkos</p>
@@ -13,7 +13,7 @@
               <p>Nombre:</p>
             </div>  
             <div class="col-sm-3">
-              <p><input type="input" class="collection__input"></input></p>
+              <p><input id="name" name="name"  type="input" type="input" class="collection__input" required></input></p>
             </div>
           </div>
           <div class="row justify-content-center">
@@ -21,7 +21,7 @@
               <p>Apellido:</p>
             </div>  
             <div class="col-sm-3">
-              <p><input type="input" class="collection__input"></input></p>
+              <p><input id="lastname" name="lastname"  type="input" type="input" class="collection__input" required></input></p>
             </div>
           </div>
           <div class="row justify-content-center">
@@ -29,7 +29,7 @@
               <p>Email:</p>
             </div>  
             <div class="col-sm-3">
-              <p><input type="email" class="collection__input"></input></p>
+              <p><input id="email" name="email" type="email" class="collection__input" required></input></p>
             </div>
           </div>
           <div class="row justify-content-center">
@@ -37,7 +37,7 @@
               <p>Contraseña:</p>
             </div>  
             <div class="col-sm-3">
-              <p><input type="password" class="collection__input"></input></p>
+              <p><input id="password" name="password" type="password" class="collection__input" required></input></p>
             </div>
           </div>
           <div class="row justify-content-center">
@@ -45,13 +45,13 @@
               <p>Repetir contraseña:</p>
             </div>  
             <div class="col-sm-3">
-              <p><input type="password" class="collection__input"></input></p>
+              <p><input id="password_confirm" name="password_confirm" type="password" class="collection__input" required></input></p>
             </div>
           </div>
         </div>
         <div class="row justify-content-center align-items-center mt-5">
           <div class="col-sm-2">
-            <button type="button" class="btn btn-danger">Registrar</button>
+            <button type="submit" class="btn btn-danger"   href="/login">Registrar</button>
           </div>
           <div class="col-sm-3 text-start">
             <label class="d-flex align-items-center fs-4">
@@ -61,7 +61,7 @@
           </div>
         </div>
         </article>
-    </section>
+      </form>
     </main>
   
 <%- include('partials/adminFooter.ejs') %>

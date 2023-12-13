@@ -1,4 +1,5 @@
 const products = require('../models/products.js');
+const user = require('../models/users.js');
 
 const adminControllers = {
   admin:  async (req, res) => {     
@@ -12,7 +13,18 @@ const adminControllers = {
    } )} ,
   create: (req, res) => res.render('create'),
   edit: (req, res) => res.render('edit'),
-  register: (req, res) => res.render('register'),
+  register: async (req, res) => {
+		res.render('register', {
+			title: 'Register',
+			error: req.query.error
+		})
+	},
+  registerPost: async (req, res) =>{
+    const {name, lastname, email, password}= req.body;
+    const [create]  = await user.createUser(name, lastname, email, password);
+    res.redirect('admin/login');
+    console.log(create);
+  },
 }
 
 module.exports = adminControllers;
