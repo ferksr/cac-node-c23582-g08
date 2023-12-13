@@ -6,7 +6,7 @@
           <div class="row">
             <p class="login__text">CREAR NUEVO ITEM</p>
           </div>
-          <form action="">
+          <form action="/admin/create" method="POST" enctype="multipart/form-data">
             <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="m-0">Categoría</p>
@@ -15,18 +15,24 @@
                   name="category"
                   class="ms-3 col-2 fs-3 me-5"
                 >
-                  <option value="test">Test</option>
+                <option value="" disabled selected hidden>Selecionar</option>
+                <% categories.forEach((category, i) => { %>
+                    <option value="<%= i+1%>"><%= category.category_name%></option>
+                <% }); %> 
                 </select>
                 <p class="m-0">Licencia</p>
-                <select id="licencia" name="licencia" class="ms-3 col-2 fs-3">
-                  <option value="test">Test</option>
+                <select id="licencia" name="licence" class="ms-3 col-2 fs-3">
+                  <option value="" disabled selected hidden>Selecionar</option>
+                    <% licences.forEach( (licence, i )=> { %>
+                        <option value="<%= i+1%>"><%= licence.licence_name%></option>
+                    <% }); %>
                 </select>
               </div>
             </div>
             <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="m-0">Nombre del producto</p>
-                <input type="text" class="collection__input ms-3 col-2 fs-3" />
+                <input type="text" name="name" class="collection__input ms-3 col-2 fs-3" />
               </div>
             </div>
             <div class="row mb-4">
@@ -43,11 +49,11 @@
             <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="mb-0">SKU</p>
-                <input type="text" class="ms-3 col-2 fs-3 me-5" />
+                <input type="text" name="sku" class="ms-3 col-2 fs-3 me-5" />
                 <p class="mb-0">Precio</p>
-                <input type="text" class="ms-3 col-2 fs-3 me-5" />
+                <input type="text" name="price" class="ms-3 col-2 fs-3 me-5" />
                 <p class="mb-0">Stock</p>
-                <input type="text" class="ms-3 col-2 fs-3" />
+                <input type="text" name="stock" class="ms-3 col-2 fs-3" />
               </div>
             </div>
 
@@ -55,21 +61,30 @@
             <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="mb-0">Descuento</p>
-                <input type="text" class="ms-3 col-2 fs-3 me-5" />
+                <input type="text" name="discount" class="ms-3 col-2 fs-3 me-5" />
                 <p class="mb-0">Cuotas</p>
-                <select class="ms-3 col-2 fs-3">
-                  <option value="test">Test</option>
+                <select name="dues" class="ms-3 col-2 fs-3">
+                  <option value="3">3</option>
                 </select>
               </div>
             </div>
 
-            <!-- Line 6: Images + File upload button -->
-            <div class="row mb-4">
+            
+            <!-- <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="mb-0">Images</p>
                 <input type="file" class="ms-3 col-5 fs-3" />
               </div>
-            </div>
+            </div> -->
+
+            <!-- <div class="row mb-4">
+              <div class="col d-flex align-items-center">
+                <p class="mb-0">Imagen Frontal</p>
+                <input type="text" name="image_front" class="ms-3 col-2 fs-3 me-5" />
+                <p class="mb-0">Imagen Trasera</p>
+                <input type="text" name="image_back" class="ms-3 col-2 fs-3 me-5" />
+              </div>
+            </div> -->
 
             <!-- Line 7: Add Producto button + Clear form button -->
             <div class="row mb-4">
