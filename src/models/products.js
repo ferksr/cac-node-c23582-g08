@@ -43,15 +43,15 @@ const getFeaturedProducts = async () => {
     }
 }
 
-const getFeaturedLicenses = async () => {
+const getFeaturedlicences = async () => {
     try {
-        const [licenses] = await conn.query(`
+        const [licences] = await conn.query(`
             SELECT li.*
             FROM licence li
             ORDER BY li.licence_id ASC
             LIMIT 3;
         `);
-        return licenses;
+        return licences;
     } catch (error){
         throw error;
     } finally {
@@ -70,7 +70,7 @@ const getCategories = async() => {
     }
   }
 
-  const getLicenses = async() => {
+  const getlicences = async() => {
     try {
         const [rows] = await conn.query('SELECT * FROM licence;');
          return rows
@@ -144,10 +144,10 @@ const editProduct = async (params, id) => {
 module.exports = {
     getProducts,
     getFeaturedProducts,
-    getFeaturedLicenses,
+    getFeaturedlicences,
     getProductsById,
     getCategories,
-    getLicenses,
+    getlicences,
     createProduct,
     editProduct,
     deleteProduct

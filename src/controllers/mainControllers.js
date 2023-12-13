@@ -4,11 +4,11 @@ const users = require('../models/users.js');
 const mainControllers = {
     home: async (req, res) => { 
         const listProducts = await featuredProducts.getFeaturedProducts();
-        const listLicenses = await featuredProducts.getFeaturedLicenses();
+        const listlicences = await featuredProducts.getFeaturedlicences();
 
         res.render('index', {
             products: listProducts,
-            licenses: listLicenses
+            licences: listlicences
         });
     },
     contact: (req, res) => res.render('index'),

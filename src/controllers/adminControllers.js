@@ -12,37 +12,38 @@ const adminControllers = {
    } )} ,
    create: async (req, res) => {
     const categories = await products.getCategories();
-    const licenses = await products.getLicenses();
+    const licences = await products.getlicences();
     res.render("create", {
       categories: categories,
-      licenses: licenses,
+      licences: licences,
     });
   },
   edit: async (req, res) => {
     const id = req.params.id;
     const categories = await products.getCategories();
-    const licenses = await products.getLicenses();
+    const licences = await products.getlicences();
     const [product] = await products.getProductsById(id);
     res.render("/edit", {
       product: product,
       categories: categories,
-      licenses: licenses,
+      licences: licences,
     });
   },
   editProduct: async (req, res) => {
     const id = req.params.id;
     const product = req.body;
     const productSchema = {
-      product_name: product.name,
-      product_description: product.description,
+      product_name: product.product_name,
+      product_description: product.product_description,
       price: product.price,
       stock: product.stock,
       discount: product.discount,
+      sku: product.sku,
       dues: product.dues,
-      image_front: product.frontImage,
-      image_back: product.backImage,
-      license_id: product.license,
-      category_id: product.category,
+      image_front: product.image_front,
+      image_back: product.image_back,
+      licence_id: product.licence_id,
+      category_id: product.category_id,
     };
     const result = await products.editProduct(productSchema, id);
     console.log(result);
@@ -68,10 +69,10 @@ const adminControllers = {
       dues: product.dues,
       image_front: product.frontImage,
       image_back: product.backImage,
-      license_id: product.license,
+      licence_id: product.licence,
       category_id: product.category,
     };
-    await product.createProduct(productSchema);
+    await products.createProduct(productSchema);
     res.redirect("/admin/admin");
   },
 }
