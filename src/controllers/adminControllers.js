@@ -58,10 +58,11 @@ const adminControllers = {
   },
   createProduct: async (req, res) => {
     const product = req.body;
+    console.log("ahora");
     console.log(product);
     const productSchema = {
-      product_name: product.name,
-      product_description: product.description,
+      product_name: product.product_name,
+      product_description: product.product_description,
       price: product.price,
       stock: product.stock,
       discount: product.discount,
@@ -69,8 +70,8 @@ const adminControllers = {
       dues: product.dues,
       image_front: product.frontImage,
       image_back: product.backImage,
-      licence_id: product.licence,
-      category_id: product.category,
+      licence_id: parseInt(product.licence_id),
+      category_id: parseInt(product.category_id),
     };
     await products.createProduct(productSchema);
     res.redirect("/admin/admin");
