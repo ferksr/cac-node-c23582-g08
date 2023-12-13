@@ -121,7 +121,7 @@ const editProduct = async (params, id) => {
   const deleteProduct = async ( id) => {
 	try {
 	  const [rows] = await conn.query('DELETE FROM product WHERE product_id = ?;', [id]);
-	  console.log("modelo-rows",[rows])
+	  console.log([rows])
 	  const response = {
 		isError: false,
 		data: rows,

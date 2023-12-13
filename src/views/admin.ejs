@@ -50,9 +50,11 @@
                 </a>
               </td>
               <td>
-                <a href="/admin/delete">
-                  <iconify-icon icon="bi:trash-fill"></iconify-icon>
-                </a>
+                <form action="/admin/delete/<%= products.product_id %>?_method=DELETE" method="POST">
+                  <button type="submit">
+                    <iconify-icon icon="bi:trash-fill"></iconify-icon>
+                  </button>
+                </form>
               </td>
             </tr>
           </tbody>
