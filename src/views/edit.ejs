@@ -10,13 +10,13 @@
             <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="m-0">Categoría</p>
-                <select name="category" id="category" class="ms-3 col-2 fs-3 me-5" required >
+                <select name="category_id" id="category" class="ms-3 col-2 fs-3 me-5" required >
                   <% categories.forEach((category, i) =>{ %>
                       <option <% if (product.category_id === i +1) { %>selected<% } %> value="<%= i+1 %>"><%= category.category_name%></option>
                   <% }); %>
               </select>
                 <p class="m-0">Licencia</p>
-                <select class="ms-3 col-2 fs-3" name="collection" id="collection"  required>
+                <select class="ms-3 col-2 fs-3" name="licence_id" id="licence"  required>
                     <% licences.forEach((licence, i) => { %>
                         <option <% if (product.licence_id === i +1) { %>selected<% } %> value="<%=i +2%>"><%= licence.licence_name%></option>
                     <% }); %>
@@ -26,12 +26,12 @@
             <div class="row mb-4">
               <div class="col d-flex align-items-center">
                 <p class="m-0">Nombre del producto</p>
-                <input name="name" value="<%= product.product_name %>" required type="text" class="collection__input ms-3 col-2 fs-3" />
+                <input name="product_name" value="<%= product.product_name %>" required type="text" class="collection__input ms-3 col-2 fs-3" />
               </div>
             </div>
             <div class="row mb-4">
               <textarea
-                name="description"
+                name="product_description"
                 id="description"
                 cols="15"
                 rows="5"
@@ -110,6 +110,5 @@
         </div>
       </section>
     </main>
-
 <%- include('partials/adminFooter.ejs') %>
 <%- include('partials/foot.ejs') %>

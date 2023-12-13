@@ -30,8 +30,11 @@ const adminControllers = {
     });
   },
   editProduct: async (req, res) => {
+    console.log('editProduct controller called');
     const id = req.params.id;
     const product = req.body;
+    console.log("Desde adminControllers:")
+    console.log('Request parameters:', id, product);
     const productSchema = {
       product_name: product.product_name,
       product_description: product.product_description,

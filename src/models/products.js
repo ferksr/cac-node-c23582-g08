@@ -94,8 +94,9 @@ const getCategories = async() => {
 
 const editProduct = async (params, id) => {
 	try {
-	  	console.log(params, id); 
+	  console.log(params, id); 
 		const [rows] = await conn.query('UPDATE product SET ? WHERE ?;', [params, {product_id: id}]);
+    console.log('Desde Products:', rows);
 		console.log([rows], params);
 	  	const response = {
 			isError: false,
