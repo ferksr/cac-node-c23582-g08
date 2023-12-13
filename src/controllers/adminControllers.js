@@ -23,7 +23,7 @@ const adminControllers = {
     const categories = await products.getCategories();
     const licences = await products.getlicences();
     const [product] = await products.getProductsById(id);
-    res.render("/edit", {
+    res.render("edit", {
       product: product,
       categories: categories,
       licences: licences,
