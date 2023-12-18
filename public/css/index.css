@@ -552,7 +552,7 @@ nav {
 
 iconify-icon {
 
-  color:var(--dark-bg-solid);
+  /* color:var(--dark-bg-solid); */
   font-size: var(--font-small);
   font-weight: 700;
 
@@ -574,4 +574,14 @@ iconify-icon {
 
 .cart__image {
   width: 25%;
+}
+
+/* ADMIN */
+.trash-icon {
+  border: none;
+  background-color: var(--light-bg-solid);
+}
+
+.red-icon {
+  color: var(--primary-solid);
 }

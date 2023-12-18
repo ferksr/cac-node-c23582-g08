@@ -21,7 +21,7 @@
             <p class="mb-0">AGREGAR</p>
           </a>
           <a href="/admin/create"
-            ><iconify-icon icon="ph:plus-fill" class="fs-1 ms-1"></iconify-icon
+            ><iconify-icon icon="ph:plus-fill" class="fs-1 ms-1 red-icon"></iconify-icon
           ></a>
         </div>
       </div>
@@ -50,9 +50,9 @@
                 </a>
               </td>
               <td>
-                <form action="/admin/delete/<%= products.product_id %>?_method=DELETE" method="POST">
-                  <button type="submit">
-                    <iconify-icon icon="bi:trash-fill"></iconify-icon>
+                <form  action="/admin/delete/<%= products.product_id %>?_method=DELETE" method="POST">
+                  <button class="trash-icon" type="submit">
+                    <iconify-icon icon="bi:trash-fill" class="red-icon"></iconify-icon>
                   </button>
                 </form>
               </td>
