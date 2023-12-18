@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css');
 @import url('https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css');
@@ -389,10 +390,10 @@ header {
   text-transform: uppercase;
 }
 
-.slider__items {
+/* .slider__items {
   display: flex;
   gap: var(--spacing-24);
-}
+} */
 
 .card-item__content {
   display: flex;
