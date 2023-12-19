@@ -1,6 +1,7 @@
 const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
+const authRoutes = require ('./src/routes/authRoutes.js');
 const bodyParser = require('body-parser'); 
 const express = require('express');
 const path = require('path');
@@ -29,9 +30,13 @@ app.use((req, res, next) => {
 // Middleware for method override
 app.use(methodOverride('_method'));
 
+// Middleware to parse JSON in the request body
+app.use(express.json()); 
+
 // Route handlers
 app.use('/', mainRoutes);
 app.use('/shop', shopRoutes);
 app.use('/admin', adminRoutes);
+app.use(authRoutes);
 
 app.listen(5000, () => console.log("Servidor corriendo en http://localhost:5000"));

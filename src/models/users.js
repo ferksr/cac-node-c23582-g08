@@ -1,9 +1,10 @@
 const {conn} = require('./conn.js');
 const crypt = require('bcryptjs');
 
-const validateLogin = async (email, password ) =>  {
+const validateLogin = async (email ) =>  {
+   
     try {     
-        const [verify] = await conn.query(`SELECT * FROM user where email="${email}" and password="${password}";`);
+        const [verify] = await conn.query(`SELECT * FROM user where email="${email}";`);
         return verify;
     } catch (error){
         throw error;
@@ -15,7 +16,6 @@ const validateLogin = async (email, password ) =>  {
 const createUser = async (name, lastname, email, password) => {
     const hash = await crypt.hash(password, 12);
     try {
-
         const [user_added]= await conn.query(`INSERT INTO user (name, lastname, email,password) values ("${name}", "${lastname}", "${email}", "${hash}");`);
         return user_added;        
     } catch (error) {
@@ -24,6 +24,7 @@ const createUser = async (name, lastname, email, password) => {
         conn.releaseConnection();
     }
 }
+
 
 module.exports = {
     validateLogin,
