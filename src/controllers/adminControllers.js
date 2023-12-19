@@ -1,5 +1,8 @@
 const products = require('../models/products.js');
-const user = require('../models/users.js');
+const users = require('../models/users.js');
+
+
+
 
 const adminControllers = {
   admin:  async (req, res) => {     
@@ -17,7 +20,9 @@ const adminControllers = {
     res.render("create", {
       categories: categories,
       licences: licences,
-    });
+    },
+    res.redirect("/login")
+    );
   },
   edit: async (req, res) => {
     const id = req.params.id;
@@ -29,6 +34,7 @@ const adminControllers = {
       categories: categories,
       licences: licences,
     });
+
   },
   editProduct: async (req, res) => {
     console.log('editProduct controller called');
@@ -60,10 +66,11 @@ const adminControllers = {
 		})
 	},
   registerPost: async (req, res) =>{
-    const {name, lastname, email, password}= req.body;
-    const [create]  = await user.createUser(name, lastname, email, password);
-    res.redirect('admin/login');
-    console.log(create);
+    const user= req.body;
+    console.log("user "+user.name);
+    await users.createUser(user.name, user.lastname, user.email, user.password);
+    res.redirect("/login")
+
   },
   deleteProduct: async (req, res) => {
     const id = req.params.id;

@@ -27,6 +27,10 @@
           <div class="col-sm-2">
             <button type="submit" class="btn btn-danger" href="/admin/admin" >Ingresar</button>
           </div>
+          <% if (error == 1) {%> 
+            <p style="color:red"> Usuario no reconocido, intente nuevamente </p>
+            <a href="admin/register">Registrarme</a>
+          <%}%> 
           <div class="col-sm-2 text-start">
             <label class="d-flex align-items-center fs-4">
               <input type="checkbox" class="me-2" value="">
