@@ -1,0 +1,95 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/shopHeader.ejs') %>
+    <main class="main-container">
+      <section class="container mt-3">
+        <div class="container">
+          <div class="row">
+            <p class="login__text">CARRITO DE COMPRAS</p>
+          </div>
+          <div class="row">
+            <table class="table">
+              <thead class="fs-3">
+                <tr>
+                  <th scope="col">DETALLE DE PRODUCTO</th>
+                  <th scope="col">CANTIDAD</th>
+                  <th scope="col">TOTAL</th>
+                  <th scope="col">QUITAR</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="row">
+                      <div class="col-3">
+                        <img src="/img/harry-potter/harry-1.webp" alt="Frenteimage" class="ms-3 col-12 fs-3 img-fluid" />
+                      </div>
+                      <div class="col">
+                        <p class="fs-2">BABY YODA BLUEBALL</p>
+                        <p class="fs-4">STAR WARS</p>
+                        <p class="fs-4">Precio $1799,99</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col-2 fs-3">
+                    <input type="number" id="quantity" name="quantity" min="1" max="999" value="1">
+                  </td>
+                  <td class="col-2 fs-3">$3.599,98</td>
+                  <td class="col-2">
+                    <a href="#">
+                      <iconify-icon icon="bi:trash-fill"></iconify-icon>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="row">
+                      <div class="col-3">
+                        <img src="/img/harry-potter/harry-1.webp" alt="Frenteimage" class="ms-3 col-12 fs-3 img-fluid" />
+                      </div>
+                      <div class="col">
+                        <p class="fs-2">BABY YODA BLUEBALL</p>
+                        <p class="fs-4">STAR WARS</p>
+                        <p class="fs-4">Precio $1799,99</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col-2 fs-3">
+                    <input type="number" id="quantity" name="quantity" min="1" max="999" value="1">
+                  </td>
+                  <td class="col-2 fs-3">$3.599,98</td>
+                  <td class="col-2">
+                    <a href="#">
+                      <iconify-icon icon="bi:trash-fill"></iconify-icon>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row cart-container">
+            <div>
+              <p class="login__text">RESUMEN</p>
+              <table class="table fs-3 col-4">
+                <tr>
+                  <td>Subtotal</td>
+                  <td class="text-end">$ 5.399,97</td>
+                </tr>
+                <tr>
+                  <td>Envío</td>
+                  <td class="text-end">$ 0</td>
+                </tr>
+                <tr>
+                  <td class="fs-1">Total</td>
+                  <td class="text-end fs-1">$ 5.399,97</td>
+                </tr>
+              </table>
+              <div class="row">
+                <button class="btn btn-danger mb-5 col-3">IR A PAGAR</button>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+    </main>
+<%- include('partials/shopFooter.ejs') %>
+<%- include('partials/foot.ejs') %>
