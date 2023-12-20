@@ -34,6 +34,7 @@ const validationRegister = [
   ];
 
 router.get('/admin/:id', adminControllers.admin);
+router.get('/admin/', adminControllers.admin);
 router.get('/create', adminControllers.create);
 router.post('/create',  adminControllers.createProduct);
 router.get('/edit/:id', adminControllers.edit);

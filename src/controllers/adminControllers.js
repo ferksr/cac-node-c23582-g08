@@ -5,25 +5,29 @@ const users = require('../models/users.js');
 
 
 const adminControllers = {
-  admin:  async (req, res) => {     
-    const product= req.params.id;
-     const product_detail = await products.getProductsById(product); 
-     const productList = await products.getProducts();  
-     console.log(product_detail)   
-     res.render('admin', {
-         product : product_detail,
-         list: productList
-   } )} ,
-   create: async (req, res) => {
-    const categories = await products.getCategories();
-    const licences = await products.getlicences();
-    res.render("create", {
+  admin: async (req, res) => {     
+    const product = req.params.id;
+    let product_detail;
+    if (product) {
+        product_detail = await products.getProductsById(product);
+    } else {
+        product_detail = await products.getProducts(); // or any other operation
+    }
+    const productList = await products.getProducts();  
+    console.log(product_detail)   
+    res.render('admin', {
+        product : product_detail,
+        list: productList
+    });
+},
+create: async (req, res) => {
+  const categories = await products.getCategories();
+  const licences = await products.getlicences();
+  res.render("create", {
       categories: categories,
       licences: licences,
-    },
-    res.redirect("/login")
-    );
-  },
+  });
+},
   edit: async (req, res) => {
     const id = req.params.id;
     const categories = await products.getCategories();
