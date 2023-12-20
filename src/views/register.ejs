@@ -2,7 +2,13 @@
 <%- include('partials/adminHeader.ejs') %>
 
   <main class="main-container">
-   
+    <% if (typeof errorMessages !== 'undefined' && errorMessages.length > 0) { %>
+      <div class="alert alert-danger">
+          <% errorMessages.forEach(function(message) { %>
+              <p><%= message %></p>
+          <% }); %>
+      </div>
+    <% } %>
     <form  action="/admin/register" class="login__container" method="POST" enctype="application/x-www-form-urlencoded" > 
       <article class>
         <p class="login__text">CREA TU CUENTA</p>  
@@ -63,6 +69,5 @@
         </article>
       </form>
     </main>
-  
 <%- include('partials/adminFooter.ejs') %>
 <%- include('partials/foot.ejs') %>

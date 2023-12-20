@@ -69,13 +69,25 @@ create: async (req, res) => {
 			error: req.query.error
 		})
 	},
-  registerPost: async (req, res) =>{
+  registerPost: async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        const errorMessages = errors.array().map(error => error.msg);
+        return res.render('register', { title: 'Register', errorMessages });
+    }
     const user= req.body;
     console.log("user "+user.name);
-    await users.createUser(user.name, user.lastname, user.email, user.password);
-    res.redirect("/login")
-
-  },
+    try {
+        await users.createUser(user.name, user.lastname, user.email, user.password);
+        res.redirect("/login")
+    } catch (err) {
+        let errorMessages = [err.message];
+        if (err.code === 'ER_DUP_ENTRY') {
+            errorMessages = ['Email Duplicado'];
+        }
+        return res.render('register', { title: 'Register', errorMessages });
+    }
+},
   deleteProduct: async (req, res) => {
     const id = req.params.id;
     console.log(id);
