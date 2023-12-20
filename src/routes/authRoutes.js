@@ -8,12 +8,12 @@ const authControllers = require('../controllers/authControllers');
 
 
 const validationLogin = [
-    body('name')
+    body('email')
         .notEmpty()
         .withMessage('El campo de nombre no puede estar vacío')
         .isLength({min: 3})
         .withMessage('El nombre debe tener longitud mínima de 3 caracteres'),
-    body('lastname').isLength({min: 3}).withMessage('El apellido debe tener longitud correcta')
+    body('password').isLength({min: 3}).withMessage('El apellido debe tener longitud correcta')
     ]
     
 router.get('/login', authControllers.login);

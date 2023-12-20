@@ -7,32 +7,31 @@ const {conn} = require('../models/conn.js');
 
 
 const validationRegister = [
-	body("name")
-	.isLength({min: 3})
-	.withMessage("Ingrese un nombre válido")
-	.bail()
-	.custom((value, {req}) => {
-			return new Promise(async (resolve, reject) => {
-				try {
-					const [usuarioExiste] = await conn.query(`SELECT * FROM users WHERE name = '${value}'`)
-					if(!usuarioExiste){
-						return reject()
-					} else {
-						return resolve()
-					}
-				} catch (error) {
-					console.log(error)
-				}
-			})
-		})
-	.withMessage("Nombre duplicado"),
+	body("email")
+	  .isLength({ min: 3 })
+	  .withMessage("Ingrese un nombre válido")
+	  .bail()
+	  .custom(async (value, { req }) => {
+		try {
+		  const [usuarioExiste] = await conn.query('SELECT * FROM user WHERE email = ?', [value]);
+  
+		  if (usuarioExiste.length > 0) {
+			return Promise.reject();
+		  } else {
+			return Promise.resolve();
+		  }
+		} catch (error) {
+		  console.log(error);
+		  return Promise.reject("Error en la consulta");
+		}
+	  })
+	  .withMessage("Email Duplicado"),
 	body('lastname')
-	.isLength({min: 3})
-	.withMessage('Ingrese un apellido válido')
-	.custom((value, {req}) => value === req.body.lastname)
-	.withMessage('No coindice el apellido')
-	]
- 
+	  .isLength({ min: 3 })
+	  .withMessage('Ingrese un apellido válido')
+	  .custom((value, { req }) => value === req.body.lastname)
+	  .withMessage('No coincide el apellido')
+  ];
 
 router.get('/admin/:id', adminControllers.admin);
 router.get('/create', adminControllers.create);
@@ -44,9 +43,9 @@ router.put('/edit/:id', (req, res, next) => {
 }, adminControllers.editProduct);
 router.get('/register', adminControllers.register);
 
-router.post('/register', adminControllers.registerPost);
+//router.post('/register', adminControllers.registerPost);
 //Quitar comentarios para Activar Validacion
-//router.post('/register',validationRegister, validation, adminControllers.registerPost);
+router.post('/register',validationRegister, validation, adminControllers.registerPost);
 
 router.delete('/delete/:id', adminControllers.deleteProduct);
 
